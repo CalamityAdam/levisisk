@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
+import { ProvideAuth } from '../services/firebase';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <ProvideAuth>
+      <Component {...pageProps} />
+    </ProvideAuth>
+  );
 }
 
-export default MyApp
+export default MyApp;
